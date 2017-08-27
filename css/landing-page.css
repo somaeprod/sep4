@@ -174,7 +174,7 @@ p.copyright {
 
 
 
-==================================== */
+/*==================================== */
 
 @media(max-width:50px) {
         h3 {
@@ -186,12 +186,19 @@ p.copyright {
 }
 
 
-@media(max-width:250px) {
+@media(min-width:100px) {
         h3 {
         padding-top: 0px;
         padding-bottom: 0px;
         font-size: 14px;
         line-height: 14px;
+    }
+
+        h6 {
+        padding-top: 0px;
+        padding-bottom: 0px;
+        font-size: 8px;
+        line-height: 8px;
     }
 }
 
@@ -201,6 +208,14 @@ p.copyright {
         padding-bottom: 0px;
         font-size: 18px;
         line-height: 18px;
+    }
+
+
+        h6 {
+        padding-top: 0px;
+        padding-bottom: 0px;
+        font-size: 8px;
+        line-height: 8px;
     }
 }
 
@@ -213,6 +228,14 @@ p.copyright {
         line-height: 22px;
         
     }
+
+
+        h6 {
+        padding-top: 0px;
+        padding-bottom: 0px;
+        font-size: 10px;
+        line-height: 10px;
+    }
 }
 
 @media(min-width:800px) {
@@ -223,6 +246,14 @@ p.copyright {
         font-size: 28px;
         line-height: 28px;
         
+    }
+
+
+        h6 {
+        padding-top: 0px;
+        padding-bottom: 0px;
+        font-size: 12px;
+        line-height: 12px;
     }
 }
 
@@ -235,6 +266,15 @@ p.copyright {
         line-height: 32px;
         
     }
+
+        h6 {
+        padding-top: 0px;
+        padding-bottom: 0px;
+        font-size: 12px;
+        line-height: 12px;
+    }
+
+
 }
 
 
@@ -259,12 +299,12 @@ p.copyright {
     }
 }
 
-@media(max-width:250px) {
+@media(min-width:100px) {
         .btn {
         border::1px;
         display:inline-block;
         outline:0;
-        padding:8px 8px;
+        padding:4px 6px;
         vertical-align:middle;
         overflow:hidden;
         text-decoration:none;
@@ -281,7 +321,7 @@ p.copyright {
         border::1px;
         display:inline-block;
         outline:0;
-        padding:8px 10px;
+        padding:4px 6px;
         vertical-align:middle;
         overflow:hidden;
         text-decoration:none;

@@ -63,7 +63,7 @@
           x.innerHTML = Math.floor((Math.random() * 8) + 0);
 
           var y = document.getElementById("n2")
-          y.innerHTML = Math.floor((Math.random() * 8) + 0);
+          y.innerHTML = Math.floor((Math.random() * 8) + 1);
 
           var s = parseFloat( x.innerHTML)  +  parseFloat(y.innerHTML);
           document.getElementById("soma").innerHTML = s;
@@ -190,8 +190,8 @@
       <div class="row text-center" >
           <div class="col-xs-2"></div>
           <div class="col-xs-8">
-            <h3 class="name" >  A + B  = <a style="color:gray;" id="soma" >   </a></h3>
-            <h3 class="name" > A &times; B  = <a style="color:gray;" id="produto"></a></h3>
+            <h3 class="name" >  A <a style="color:red;"> + </a> B  = <a style="color:gray;" id="soma" >   </a></h3>
+            <h3 class="name" > A <a style="color:red;"> &times; </a> B  = <a style="color:gray;" id="produto"></a></h3>
           </div>
           <div class="col-xs-2"></div>
       </div>
@@ -327,13 +327,13 @@
     <div class="container">
         <div class="row text-center">
             <div class="col-md-4">
-                <p class="copyright text-muted small">Developed by <a href="http://www.leoneveiga.com.br"> Leone Veiga</a> - Brazil - 2017</p>
+                <p class="copyright text-muted small">Developed by <a href="http://www.leoneveiga.com.br" target="_blank"> Leone Veiga</a> - Brazil - 2017</p>
             </div>
             <div class="col-md-4">
                 <p class="copyright text-muted small">contact.plusandtimes@gmail.com</p>
             </div>
             <div class="col-md-4">
-                <p class="copyright text-muted small">Page Template adapted from <a href="http://jekyllthemes.org/themes/landing-page/">Landing Page Jekyll</a></p>
+                <p class="copyright text-muted small">Page Template adapted from <a href="http://jekyllthemes.org/themes/landing-page/" target="_blank">Landing Page Jekyll</a></p>
             </div>
         </div>
     </div>
