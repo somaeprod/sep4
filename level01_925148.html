@@ -30,29 +30,16 @@
     <link rel="shortcut icon" href="img/favicon.ico"></link>
 
 
-<style>
-#myProgress {
-  width: 100%;
-  background-color: #ddd;
-}
-
-#myBar {
-  width: 1%;
-  height:5vm;
-  background-color: #0B67E0;
-  font-family: "Roboto Slab","Helvetica Neue",Helvetica,Arial,sans-serif;
-}
-</style>
-
-
 </head>
 
-	<body onload="myFunction();">
+	<body onload="myFunction(); myFunction2();">
 
 		    <!-- About Section -->
 <section >
 
   <script>
+
+
 
       var sg;
       var pg;
@@ -61,12 +48,27 @@
       var MB = 1;
 
       function myFunction() {
+myFunction2();
+      /* 
+      Este exemplo retorna um número inteiro entre dois valores INTEIROS definidos. 
+      O valor não poderá ser menor que min, 
+      e será menor (mas não igual) a max.
+
+      function getRandomInt(min, max) {
+        min = Math.ceil(min);
+        max = Math.floor(max);
+        return Math.floor(Math.random() * (max - min)) + min;
+      }
+
+      https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/Math/random
+      */
+
 
           var x = document.getElementById("n1")
-          x.innerHTML = Math.floor((Math.random() * 5) + 1);
+          x.innerHTML = Math.floor(Math.random() * (6 - 1)) + 1;
 
           var y = document.getElementById("n2")
-          y.innerHTML = Math.floor((Math.random() * 5) + 1);
+          y.innerHTML = Math.floor(Math.random() * (6 - 1)) + 1;
 
           var s = parseFloat( x.innerHTML)  +  parseFloat(y.innerHTML);
           document.getElementById("soma").innerHTML = s;
@@ -94,15 +96,7 @@
 
         if ((somau == sg) && (produ == pg)){        
 
-
-        document.getElementById('myImage').src='img/feliz50.jpg';
-
-         /* alert('Acertou! :)'); */
-
-          /*
-          var node = document.getElementById('node-id');
-          node.innerHTML('<p>some dynamic html</p>');
-          */
+          document.getElementById('myImage').src='img/feliz50.jpg';
 
           var elem = document.getElementById("myBar"); 
 
@@ -113,20 +107,19 @@
           document.getElementById("form_A").reset();
           document.getElementById("form_B").reset();
 
-      } else {
-          /*   alert('Errou! :(');   */
+          myFunction();
 
+
+      } else {
 
           document.getElementById("form_A").reset();
           document.getElementById("form_B").reset();
-
+            
           document.getElementById('myImage').src='img/triste50.jpg';
 
       }
 
       if (width == 100) {
-
-          // alert('Level 01 completed!');
 
           window.location="level02_609745.html";   // <<  redirecionar
 
@@ -134,7 +127,7 @@
 
       }
 
-      function A0(){document.getElementById("user_A").value = 0*MA;}
+      function A0(){document.getElementById("user_A").value = 0;}
       function A1(){document.getElementById("user_A").value = 1*MA;}
       function A2(){document.getElementById("user_A").value = 2*MA;}
       function A3(){document.getElementById("user_A").value = 3*MA;}
@@ -148,7 +141,7 @@
       function A11(){document.getElementById("user_A").value = 11*MA;}
       function A12(){document.getElementById("user_A").value = 12*MA;}
 
-      function B0(){document.getElementById("user_B").value = 0*MB;}
+      function B0(){document.getElementById("user_B").value = 0;}
       function B1(){document.getElementById("user_B").value = 1*MB;}
       function B2(){document.getElementById("user_B").value = 2*MB;}
       function B3(){document.getElementById("user_B").value = 3*MB;}
@@ -164,20 +157,35 @@
 
       function MA0(){
         MA = -1;
+        document.getElementById("form_A").reset();
       }
 
       function PA0(){
         MA = 1;
+        document.getElementById("form_A").reset();
       }
 
       function MB0(){
         MB = -1;
+        document.getElementById("form_B").reset();
       }
 
       function PB0(){
         MB = 1;
+        document.getElementById("form_B").reset();
       }
 
+
+      var myVar;
+
+      function myFunction2() {
+          myVar = setTimeout(showPage, 1000);
+      }
+
+      function showPage() {
+        document.getElementById("loader").style.display = "none";
+        document.getElementById("myDiv").style.display = "block";
+      }
 
   </script>
 
@@ -201,23 +209,35 @@
       <div id="myProgress">
       <div id="myBar">0%</div>
       </div>
-      <h6 style="color:rgb(201,48,44);"> <b>Instructions:</b> Order doesn't metter; Use the virtual keys. </h6>
+      <h6 style="color:rgb(201,48,44);"> <b>Instructions:</b> Order doesn't matter; Use the virtual keys. </h6>
     </div>  
     <div class="col-xs-3"></div>
   </div>
 
-<hr> <!-- =============================================== -->
+<!-- <hr> =============================================== -->
 
-      <div class="row text-center" >
-          <div class="col-xs-2"></div>
-          <div class="col-xs-8">
-            <h3 class="name" >  A <a style="color:rgb(201,48,44);"> + </a> B  = <a style="color:gray;" id="soma" >   </a></h3>
-            <h3 class="name" > A <a style="color:rgb(201,48,44);"> &times; </a> B  = <a style="color:gray;" id="produto"></a></h3>
-          </div>
-          <div class="col-xs-2"></div>
-      </div>
+<div class="row text-center" >
+  <div class="col-xs-2"></div>
+  <div class="col-xs-8">
 
+    <div id="loader">
+      <h3 class="name"><a class="fa fa-refresh fa-spin"> </a> </h3>
+      <h3 class="name"> &nbsp; </h3>
+    </div>
 
+    <div style="display:none;" id="myDiv" class="animate-bottom">
+          <h3 class="name"> A <a style="color:rgb(201,48,44);">&plus;</a> B  = <a style="color:gray;" id="soma" ></a></h3>
+          <h3 class="name"> A <a style="color:rgb(201,48,44);">&times;</a> B  = <a style="color:gray;" id="produto"></a></h3>
+    </div>
+
+  </div>
+  <div class="col-xs-2"></div>
+</div>
+
+<!--
+<i class="fa fa-refresh fa-spin" style="font-size:24px"></i>
+<i class="fa fa-cog fa-spin" style="font-size:24px"></i>
+-->
 
 <hr> <!-- =============================================== -->
 
@@ -262,9 +282,9 @@
                       </div>
                       <div class="row">
                         <div class="btn-group">
-                          <a type="button" class="btn btn-primary" onclick="PA0();"> &plus; </a>
+                          <a type="button" class="btn btn-info"    onclick="PA0();"> C </a>
                           <a type="button" class="btn btn-primary" onclick="A0();">0</a>
-                          <a type="button" class="btn btn-primary" onclick="MA0();"> &minus; </a>           
+                          <a type="button" class="btn btn-danger"  onclick="MA0(); " disabled> &minus; </a>          
                         </div>
                       </div>
 
@@ -277,10 +297,12 @@
 
           <div class="col-md-2 col-xs-2">
              <div class="row text-center">
+             <h2> &nbsp; </h2>
               <img id="myImage"  src="img/pensativo50.jpg" >
+              <h2> &nbsp; </h2>
               </div>
               <div class="row text-center">
-              <a href="#" onclick="compara(); myFunction();" class="btn btn-primary">Go</a>
+              <a href="#" onclick="compara(); myFunction2();" class="btn btn-primary">Go</a>
             </div>
             
 
@@ -323,9 +345,9 @@
                         </div>
                         <div class="row">
                           <div class="btn-group">
-                          <a type="button" class="btn btn-primary" onclick="PB0();"> &plus; </a>
-                          <a type="button" class="btn btn-primary" onclick="A0();">0</a>
-                          <a type="button" class="btn btn-primary" onclick="MB0();"> &minus; </a>                      
+                          <a type="button" class="btn btn-info" onclick="PB0();"> C </a>
+                          <a type="button" class="btn btn-primary" onclick="B0();">0</a>
+                          <a type="button" class="btn btn-danger" onclick="MB0();" disabled> &minus; </a>                        
                           </div>
                         </div>
                   </div>
